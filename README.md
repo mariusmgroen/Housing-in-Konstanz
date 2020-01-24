@@ -1,60 +1,19 @@
----
-output:
-  html_document:
-    toc: true
-    toc_depth: 3
-    number_sections: false
-    toc_float:
-      collapsed: false
-      smooth_scroll: true
-    #theme: lumen
----
-
-<script>
-$(document).ready(function() {
-  $items = $('div#TOC li');
-  $items.each(function(idx) {
-    num_ul = $(this).parentsUntil('#TOC').length;
-    $(this).css({'text-indent': num_ul * 15, 'padding-left': 0});
-  });
-
-});
-</script> <!-- Thank you! @https://stackoverflow.com/questions/46201753/ -->
-
-<!--
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
--->
-
 # Housing Market in Constance  
 ***  
-
-> Since no access to the webserver can be given in this form of submission,
-> this `README.html` will provide the most essential information on the project and
-> hopefully display all the steps done in this project as well as answer
-> all upcoming questions.  
->  
-> The script itself is appended, too. But for the sake of transparency and 
-> clarity of presentation, it is only annotated on the most important parts.
-> The general structure of the project is presented in here instead of the
-> notebook itself.  
 
 
 ## 1. About the Author   
 **Created by:**  
  Marius M. Groen  
- Student ID: 01/878725  
 
 **For:**  
- Introduction to Computational Social Sciences  
+ Computational Social Sciences with Python  
  Supervised by: Dr. Nils Meise  
  Department of Sociology  
  University of Konstanz  
 
 **On:**  
- July 31, 2019  
- in the Summer Term 2019
+ In the Summer Term 2019
 \
 \
 
@@ -154,7 +113,7 @@ the structure is exemplified by the following snapshot:
 ```shell
 tree -L 5
 ```
-<img src="Tree_Example_L5_reduced.pdf" alt="Tree" width="400"/>  
+<img src="Graphs/Tree_Example_L5_reduced.pdf" alt="Tree" width="400"/>  
 \
 
 
@@ -295,13 +254,13 @@ notebook in which the most crucial features of the housing market are examined:
 ## 3. Examples of Results  
 ### 3.1 Data
 The scraped and cleaned data does have a structure like the following:  
-<img src="Bildschirmfoto_Data.PNG" alt="Dataframe" width="100%"/>  
+<img src="Graphs/Bildschirmfoto_Data.PNG" alt="Dataframe" width="100%"/>  
 
-### 3.2 Quantitative Analysis {.tabset}  
+### 3.2 Quantitative Analysis
 #### Duration  
 Analyzing how long each ad is active before being turned off,
 the following results emerge:  
-<img src="0_graphs/Plot_Duration.pdf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Duration.pdf" alt="Boxplots" width="100%"/>  
 
 As can be seen from the graph, 50% of the ads are active
 between 55-145 hours (~ 2-6 days). Nevertheless, some are
@@ -315,7 +274,7 @@ in chapter `4.1 Potential of Data`.
 Analyzing the price (in Euro) by district, the results can be summarized with
 the following boxplots, showing the span as well as the median price for each location:  
 
-<img src="0_graphs/Plot_Box_Price.pdf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Box_Price.pdf" alt="Boxplots" width="100%"/>  
 Whereas the y-axis displays the price of each ad, sorted by district on
 the x-axis.  
   
@@ -325,7 +284,7 @@ In order to make the prices more comparable, they are calculated to be the estim
 of Euro per square meter in size. Analyzing this by district, the results can again 
 be summarized with the following boxplots:  
 
-<img src="0_graphs/Plot_Box_PriceSqM.pdf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Box_PriceSqM.pdf" alt="Boxplots" width="100%"/>  
 Whereas the y-axis displays the price per square meter of each ad, sorted by
 district on the x-axis.  
   
@@ -334,12 +293,12 @@ district on the x-axis.
 Analyzing the size (in square meter) by district, the results can be summarized with
 the following boxplots, showing the span as well as the median price for each location:  
 
-<img src="0_graphs/Plot_Box_Size.pdf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Box_Size.pdf" alt="Boxplots" width="100%"/>  
 Whereas the y-axis displays the size of each room, sorted by
 district on the x-axis.  
   
   
-### 3.3 Data Visualization {.tabset}  
+### 3.3 Data Visualization
 In order to get a visual overview of the distribution of rooms,
 maps can be used. This allows for a fast and comprehensive understanding
 of the geographical distribution and therefore leads to an intuitive
@@ -351,7 +310,7 @@ Plotting every active ad as a blue circle and mapping it with a popup,
 containing information such as the ads ID as well as the price and size
 of the room, can be seen as a first step in visual exploratory data analysis.  
 
-<img src="Bildschirmfoto_MMap.PNG" alt="Map with Markers" width="100%"/>  
+<img src="Graphs/Bildschirmfoto_MMap.PNG" alt="Map with Markers" width="100%"/>  
 \
 \
 
@@ -362,7 +321,7 @@ suitable for publication. Without showing the concrete address of every each
 ad, it cummulates to the distribution without losing its key feature, that is
 providing an easy to understand visualization of the flat's geographical distribution.
 
-<img src="Bildschirmfoto_HMap.PNG" alt="Heatmap" width="100%"/>  
+<img src="Graphs/Bildschirmfoto_HMap.PNG" alt="Heatmap" width="100%"/>  
 \
 \
 
@@ -424,59 +383,5 @@ Points of emphasis, in which the method should be further improved:
 \
 
 
-# Appended Files  
-All files are zipped in `878725_Groen_ICSS.zip`:  
-**[1]** Notebook: `00_Create_Modify_Data_878725_Groen.ipynb`  
-**[2]** Notebook: `01_Analysis_Maps_878725_Groen.ipynb`  
-**[3]** HTML copy: `00_Create_Modify_Data_878725_Groen.html`  
-**[4]** HTML copy: `01_Analysis_Maps_878725_Groen.html`  
-**[5]** Data: `0_total_0730_2050.csv`  
-**[6]** Code: `project.py`  
 
 ***
-
-# References  
-**Create List of Results (instead of new Vars)**  
-https://stackoverflow.com/questions/6181935/how-do-you-create-different-variable-names-while-in-a-loop  
- 
-**Creating a List of Classes**  
-https://stackoverflow.com/questions/18725760/beautifulsoup-findall-given-multiple-classes?fbclid=IwAR0k_1N3W-Ti-gcpoAalNjLwZcbAmSXVcyoe8zfvVny8TaM5TBls2AnKFBM
-
-**Extract Numbers from String**  
-https://stackoverflow.com/questions/4289331/how-to-extract-numbers-from-a-string-in-python  
-
-**Include Letters in Housenumber from Address-String**  
-https://stackoverflow.com/questions/12572362/get-a-string-after-a-specific-substring  
-
-**Cut Numbers from Street**  
-https://stackoverflow.com/questions/33940917/how-can-i-remove-the-last-character-of-a-string-in-python?lq=1  
-
-**Appending to DataFrame**  
-https://stackoverflow.com/questions/49916371/how-to-append-new-row-to-dataframe-in-pandas
-
-**How to use Geopy Nominatim**  
-https://gis.stackexchange.com/questions/293615/user-agent-argument-in-nominatim-in-geopy  
-
-**Rotate axis-labels**  
-https://stackoverflow.com/questions/10998621/rotate-axis-text-in-python-matplotlib  
-
-**Use float for price instead of int due to pandas not handling _NaN / None_ in _int64_**  
-https://stackoverflow.com/questions/21287624/convert-pandas-column-containing-nans-to-dtype-int  
-
-**Enumerate in loop for adding _n_**  
-https://stackoverflow.com/questions/2672936/multiple-counters-in-a-single-for-loop-python  
-
-**Create directory with Python**  
-https://thispointer.com/how-to-create-a-directory-in-python/
-
-
-**Find Duplicates**  
-https://thispointer.com/pandas-find-duplicate-rows-in-a-dataframe-based-on-all-or-selected-columns-using-dataframe-duplicated-in-python/  
-
-**Drop Duplicates**  
-https://stackoverflow.com/questions/37047420/how-to-drop-rows-of-pandas-dataframe-with-same-value-based-on-condition-in-diffe  
-
-**Reset Index in New Dataframe**  
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html  
-
-
