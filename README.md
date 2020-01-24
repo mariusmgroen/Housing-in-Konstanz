@@ -1,7 +1,6 @@
 # Housing Market in Constance  
 ***  
 
-
 ## 1. About the Author   
 **Created by:**  
  Marius M. Groen  
@@ -13,9 +12,8 @@
  University of Konstanz  
 
 **On:**  
- In the Summer Term 2019
-\
-\
+ In the Summer Term 2019  
+
 
 
 ## 2. About the Project  
@@ -41,7 +39,7 @@ This collection of data is achieved by several processes:
 5. Combining the new data with the earlier saved  
 
 **Start of the _fully-automated_ collection was on July 23.**  
-\
+
 
 
 ### 2.1 Webserver  
@@ -63,7 +61,7 @@ remaining spaces identify the days, months, and weekdays (`* * *` implying *all*
 Afterwards the path to the used python is given `/usr/bin/python3` which can be found
 on the webserver using `which python3`. The last part of the crontab identifies the file that
 should be run and refers to the script itself.  
-\
+
 
 
 ### 2.2 Project Structure  
@@ -113,8 +111,8 @@ the structure is exemplified by the following snapshot:
 ```shell
 tree -L 5
 ```
-<img src="Graphs/Tree_Example_L5_reduced.pdf" alt="Tree" width="400"/>  
-\
+<img src="Graphs/Tree_Example_L5_reduced.PNG" alt="Tree" width="400"/>  
+
 
 
 ### 2.3 Scraping  
@@ -123,7 +121,7 @@ flats in Constance are saved locally. These are stored as *.html-files.
 The number of saved results is defined in a separate variable for easier
 changing (if wanted). It represents the number of pages one wants to store,
 whereas each page consists of 20 results, all being sorted by recency.  
-\
+
 
 
 ### 2.4 Parsing and Cleaning  
@@ -171,7 +169,7 @@ extractions are nested within an `if-else` construction.
 
 Each turn of the loop over containers results in the creation of a valuelist
 that can be used to write a row to the dataframe for each ad.  
-\
+
 
 
 #### Cleaning  
@@ -193,7 +191,7 @@ After exporting the data, the filename of each cleaned dataset is linewise writt
 (appended) to `dataframes.txt`. This textfile therefore serves as a log-file as well
 as a list of all parsed datasets. This can be used to combine all parsed datasets to a
 masterfile containing the total amount of data; as presented in the next step.  
-\
+
 
 
 ### 2.5 Appending  
@@ -225,7 +223,7 @@ as a copy of the first cleaned dataframe when executing the script
 for the first time. This is done with `shutil`.
 Therefore, in every further runtime, the total file
 exists and satisfies the given requirements as stated above.  
-\
+
 
 
 ### 2.6 Analysis  
@@ -247,7 +245,6 @@ notebook in which the most crucial features of the housing market are examined:
 - More comparable distribution of room price per square meter by district  
 - Detailed visualization of geographical distribution of ads  
 - More generalized visualization of the geographical distribution  
-\
 
 
 
@@ -260,7 +257,7 @@ The scraped and cleaned data does have a structure like the following:
 #### Duration  
 Analyzing how long each ad is active before being turned off,
 the following results emerge:  
-<img src="Graphs/Plot_Duration.pdf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Duration.PNGf" alt="Boxplots" width="100%"/>  
 
 As can be seen from the graph, 50% of the ads are active
 between 55-145 hours (~ 2-6 days). Nevertheless, some are
@@ -274,7 +271,7 @@ in chapter `4.1 Potential of Data`.
 Analyzing the price (in Euro) by district, the results can be summarized with
 the following boxplots, showing the span as well as the median price for each location:  
 
-<img src="Graphs/Plot_Box_Price.pdf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Box_Price.PNG" alt="Boxplots" width="100%"/>  
 Whereas the y-axis displays the price of each ad, sorted by district on
 the x-axis.  
   
@@ -284,7 +281,7 @@ In order to make the prices more comparable, they are calculated to be the estim
 of Euro per square meter in size. Analyzing this by district, the results can again 
 be summarized with the following boxplots:  
 
-<img src="Graphs/Plot_Box_PriceSqM.pdf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Box_PriceSqM.PNG" alt="Boxplots" width="100%"/>  
 Whereas the y-axis displays the price per square meter of each ad, sorted by
 district on the x-axis.  
   
@@ -293,7 +290,7 @@ district on the x-axis.
 Analyzing the size (in square meter) by district, the results can be summarized with
 the following boxplots, showing the span as well as the median price for each location:  
 
-<img src="Graphs/Plot_Box_Size.pdf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Box_Size.PNG" alt="Boxplots" width="100%"/>  
 Whereas the y-axis displays the size of each room, sorted by
 district on the x-axis.  
   
@@ -311,8 +308,6 @@ containing information such as the ads ID as well as the price and size
 of the room, can be seen as a first step in visual exploratory data analysis.  
 
 <img src="Graphs/Bildschirmfoto_MMap.PNG" alt="Map with Markers" width="100%"/>  
-\
-\
 
 
 #### HeatMap    
@@ -322,8 +317,6 @@ ad, it cummulates to the distribution without losing its key feature, that is
 providing an easy to understand visualization of the flat's geographical distribution.
 
 <img src="Graphs/Bildschirmfoto_HMap.PNG" alt="Heatmap" width="100%"/>  
-\
-\
 
 
 ## 4. Outlook  
@@ -378,9 +371,7 @@ Points of emphasis, in which the method should be further improved:
 - Dynamic maps featuring timeline  
     - For visualizing the evolution of hotspots over time it would be necessary
       to include a timeline to the maps and therefore create either an animation
-      or a new tile for each point in time one wants to view.
-\
-\
+      or a new tile for each point in time one wants to view.  
 
 
 
