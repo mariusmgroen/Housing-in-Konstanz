@@ -257,7 +257,7 @@ The scraped and cleaned data does have a structure like the following:
 #### Duration  
 Analyzing how long each ad is active before being turned off,
 the following results emerge:  
-<img src="Graphs/Plot_Duration.PNGf" alt="Boxplots" width="100%"/>  
+<img src="Graphs/Plot_Duration.PNG" alt="Boxplots" width="100%"/>  
 
 As can be seen from the graph, 50% of the ads are active
 between 55-145 hours (~ 2-6 days). Nevertheless, some are
