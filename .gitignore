@@ -1,5 +1,5 @@
 .Rhistory
 .DS_Store
-*.Rhistory
-*.DS_Store
+.ipynb_checkpoints
+.git
 
